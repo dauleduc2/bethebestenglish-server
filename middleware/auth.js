@@ -2,7 +2,6 @@ const helper = require("../utils/helper");
 const jwt = require("jsonwebtoken");
 module.exports = function (req, res, next) {
   const token = req.cookies["x-auth-token"];
-  console.log(token);
   if (!token)
     return res
       .status(401)
