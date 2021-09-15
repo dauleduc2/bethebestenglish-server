@@ -4,6 +4,7 @@ module.exports = function () {
     mongoose
         .connect(`mongodb://${process.env.dataUrl}/${databaseName}`, {
             useNewUrlParser: true,
+            useUnifiedTopology: true,
         })
         .then(() => console.log("connected to mongodb...."));
 };
