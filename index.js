@@ -10,6 +10,7 @@ const cors = require("cors");
 var cookieParser = require("cookie-parser");
 app.use(cors({ origin: process.env.client_url, credentials: true }));
 app.use(cookieParser());
+app.use(express.static("public"));
 //set up for route, database and middleware
 require("./startup/routes")(app);
 require("./startup/db")();
