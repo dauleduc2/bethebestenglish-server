@@ -95,6 +95,7 @@ router.post("/register", async (req, res) => {
     });
     res.send(dataToSend).status(200);
 });
+
 //GET current user
 router.get("/me", authMiddleWare, async (req, res) => {
     const { _id } = req.user;
@@ -110,6 +111,7 @@ router.get("/me", authMiddleWare, async (req, res) => {
         helper.getResponseForm(dataToSend, "Get data success")
     );
 });
+
 //GET log out
 router.get("/me/logout", authMiddleWare, async (req, res) => {
     res.cookie("x-auth-token", "", {
